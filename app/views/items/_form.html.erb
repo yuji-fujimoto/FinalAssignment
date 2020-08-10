@@ -1,0 +1,33 @@
+<%= form_with(model: item, local: true) do |f| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% item.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :item_name, 'アイテム名' %>
+  <%= f.text_field :item_name %>
+  
+  <%= f.label :category, 'カテゴリ' %>
+  <%= f.select :category, Item.categories.keys.to_a, include_blank: "選択してください" %>
+  
+  
+  <%= f.label :brand, 'ブランド' %>
+  <%= f.text_field :brand %>
+  
+  <%= f.label :color, 'カラー' %>
+  <%= f.text_field :color %>
+  
+  <%= f.label :purchase_price, '購入価格' %>
+  <%= f.text_field :purchase_price %>
+  
+  <%= f.label :remarks, '備考' %>
+  <%= f.text_field :remarks %>
+  
+  <%= f.submit '登録する' %>
+  
+<% end %>

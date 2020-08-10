@@ -1,0 +1,12 @@
+<h1><%= @item.item_name %>の詳細</h1>
+
+<p>アイテム名： <%= @item.item_name %> </p>
+<p>カテゴリ： <%= @item.category %> </p>
+<p>ブランド： <%= @item.brand %> </p>
+<p>カラー： <%= @item.color %> </p>
+<p>購入価格： <%= @item.purchase_price %> </p>
+<p>備考： <%= @item.remarks %> </p>
+
+<%= link_to 'アイテム一覧に戻る', items_path %>
+<%= link_to 'アイテム編集', edit_item_path(@item) %>
+<%= link_to 'アイテム削除', @item, method: :delete, data: {confirm: '本当に削除してよろしいですか？' } %>
