@@ -1,0 +1,9 @@
+
+<% if clothes %>
+  <td><%= link_to clothes.item_name, item_path(clothes) %></td>
+  <td><%= clothes.brand ? clothes.brand : "" %></td>
+  <td><%= clothes.color ? clothes.color : "" %></td>
+
+<% else %>
+  <td colspan="3">未登録</td>
+<% end %>

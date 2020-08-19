@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_10_013722) do
+ActiveRecord::Schema.define(version: 2020_08_19_074922) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "item_name"
@@ -26,13 +26,33 @@ ActiveRecord::Schema.define(version: 2020_08_10_013722) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
+  create_table "outfits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.string "concept"
+    t.integer "tops"
+    t.integer "outer"
+    t.integer "pants"
+    t.integer "bag"
+    t.integer "shoes"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_outfits_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "max_tops"
+    t.integer "max_outer"
+    t.integer "max_pants"
+    t.integer "max_bag"
+    t.integer "max_shoes"
   end
 
   add_foreign_key "items", "users"
+  add_foreign_key "outfits", "users"
 end

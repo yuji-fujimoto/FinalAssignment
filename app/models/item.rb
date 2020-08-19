@@ -10,4 +10,12 @@ class Item < ApplicationRecord
   validates :color, length: { maximum: 255 }
   
   enum category: { tops: 1, outer: 2, pants: 3, bag: 4, shoes: 5 }
+  
+  # validate :user_items_size_validate
+  # def user_items_size_validate
+  #   if self.user && self.user.items.size >= User::ITEM_MAX
+  #     errors.add(:base, "itemsはこれ以上登録できません")
+  #   end
+  # end
+  
 end

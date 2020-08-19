@@ -1,0 +1,67 @@
+<div class="col-sm-9">
+  <ul class="nav nav-tabs nav-justified mb-3">
+    <li class="nav-item"><%= link_to 'items', items_path %></li>
+    <li class="nav-item"><%= link_to 'outfits', outfits_path %></li>
+    <li class="nav-item"><%= link_to 'setting', user_path(@user) %></li>
+  </ul>
+
+  <h1><%= @user.name %>さんのマイページ</h1>
+
+  <table class="table">
+    <tr>
+      <td>名前</td>
+      <td><%= @user.name %></td>
+    </tr>
+    
+    <tr>
+      <td>メールアドレス</td>
+      <td><%= @user.email %></td>
+    </tr>
+  </table>
+  
+
+  <h2>アイテムの所持数と制限数</h2>
+
+  <table class="table table-bordered">
+    <thead class="thead-light">
+      <th>カテゴリ</th>
+      <th>制限数</th>
+      <th>所持数</th>
+    </thead>
+    
+    <tr>
+      <td>トップス</td>
+      <td><%= @user.max_tops %></td>
+      <td><%= @user.items.where(category: 1).count %></td>
+    </tr>
+    
+    <tr>
+      <td>アウター/ジャケット</td>
+      <td><%= @user.max_outer %></td>
+      <td><%= @user.items.where(category: 2).count %></td>
+    </tr>
+    
+    <tr>
+      <td>パンツ</td>
+      <td><%= @user.max_pants %></td>
+      <td><%= @user.items.where(category: 3).count %></td>
+    </tr>
+    
+    <tr>
+      <td>バッグ</td>
+      <td><%= @user.max_bag %></td>
+      <td><%= @user.items.where(category: 4).count %></td>
+    </tr>
+    
+    <tr>
+      <td>シューズ</td>
+      <td><%= @user.max_shoes %></td>
+      <td><%= @user.items.where(category: 5).count %></td>
+    </tr>
+  </table>
+  
+  <div class="text-right">
+    <%= link_to '設定', edit_user_path(@user), class: 'btn btn-primary' %>
+  </div>
+
+</div>

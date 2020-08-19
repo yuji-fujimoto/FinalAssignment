@@ -1,0 +1,44 @@
+<h1><%= @outfit.title %>の詳細</h1>
+
+<table class="table">
+
+  <tr>
+    <td>名前</td>
+    <td colspan="3"><%= @outfit.title %></td>
+  </tr>
+  
+  <tr>
+    <td>コンセプト</td>
+    <td colspan="3"><%= @outfit.concept %></td>
+  </tr>
+  
+  <tr>
+    <td>トップス</td>
+    <%= render partial: 'item_describe', locals: { clothes: @tops } %>
+  </tr>
+  
+  <tr>
+    <td>アウター/ジャケット</td>
+    <%= render partial: 'item_describe', locals: { clothes: @outer } %>
+  </tr>
+  
+  <tr>
+    <td>パンツ</td>
+    <%= render partial: 'item_describe', locals: { clothes: @pants } %>
+  </tr>
+    
+  <tr>
+    <td>バッグ</td>
+    <%= render partial: 'item_describe', locals: { clothes: @bag } %>
+  </tr>
+  
+   <tr>
+    <td>シューズ</td>
+    <%= render partial: 'item_describe', locals: { clothes: @shoes } %>
+  </tr>
+    
+</table>
+
+<%= link_to 'コーディネート編集', edit_outfit_path(@outfit), class: 'btn btn-primary' %>
+<%= link_to 'コーディネート削除', @outfit, method: :delete, data: {confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
+<div class="text-right"><%= link_to 'コーディネート一覧に戻る', outfits_path, class: 'btn btn-secondary btn-sm' %></div>

@@ -1,5 +1,35 @@
 <h1>アイテム新規登録</h1>
 
-<%= render 'form', item: @item %>
+<% if @user.max_tops %>
+<% if current_user.items.where(category: "tops").count >= @user.max_tops %>
+  <span class="bg-warning">トップスがいっぱいです<br></span>
+<% end %>
+<% end %>
 
-<%= link_to 'アイテム一覧に戻る', items_path %>
+<% if @user.max_outer %>
+  <% if current_user.items.where(category: 2).count >= @user.max_outer %>
+   <span class="bg-warning">アウター/ジャケットがいっぱいです<br></span>
+  <% end %>
+<% end %>
+
+<% if @user.max_pants %>
+  <% if current_user.items.where(category: 3).count >= @user.max_pants %>
+    <span class="bg-warning">パンツがいっぱいです<br></span>
+  <% end %>
+<% end %>
+
+<% if @user.max_bag %>
+  <% if current_user.items.where(category: 4).count >= @user.max_bag %>
+    <span class="bg-warning">バッグがいっぱいです<br></span>
+  <% end %>
+<% end %>
+
+<% if @user.max_shoes %>
+  <% if current_user.items.where(category: 5).count >= @user.max_shoes %>
+    <span class="bg-warning">シューズがいっぱいです</span>
+  <% end %>
+<% end %>
+
+  <%= render 'form', item: @item %>
+
+<div class="text-right"><%= link_to 'アイテム一覧に戻る', items_path, class: 'btn btn-secondary btn-sm' %></div>

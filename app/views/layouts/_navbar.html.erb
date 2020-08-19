@@ -13,6 +13,9 @@
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
             <ul class="dropdown-menu dropdwon-menu-right">
               <li class="dropdown-item"><%= link_to 'My items', items_url %></li>
+              <li class="dropdown-item"><%= link_to 'My outfits', outfits_url %></li>
+              <li class="dropdown-item"><%= link_to 'My Profile', user_path(@user) %></li>
+         
               <li class="dropdown-divider"></li>
               <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete %></li>
             </ul>

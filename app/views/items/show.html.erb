@@ -1,12 +1,46 @@
 <h1><%= @item.item_name %>の詳細</h1>
 
-<p>アイテム名： <%= @item.item_name %> </p>
-<p>カテゴリ： <%= @item.category %> </p>
-<p>ブランド： <%= @item.brand %> </p>
-<p>カラー： <%= @item.color %> </p>
-<p>購入価格： <%= @item.purchase_price %> </p>
-<p>備考： <%= @item.remarks %> </p>
 
-<%= link_to 'アイテム一覧に戻る', items_path %>
-<%= link_to 'アイテム編集', edit_item_path(@item) %>
-<%= link_to 'アイテム削除', @item, method: :delete, data: {confirm: '本当に削除してよろしいですか？' } %>
+<table class="table">
+
+  <tr>
+    <td>アイテム名称</td>
+    <td><%= @item.item_name %></td>
+  </tr>
+  
+  <tr>
+    <td>カテゴリ</td>
+    <td><%= @item.category %></td>
+  </tr>
+  
+  <tr>
+    <td>ブランド</td>
+    <td><%= @item.brand %></td>
+  </tr>
+  
+  <tr>
+    <td>カラー</td>
+    <td><%= @item.color %></td>
+  </tr>
+  
+  <tr>
+    <td>サイズ</td>
+    <td><%= @item.size %></td>
+  </tr>
+  
+  <tr>
+    <td>購入価格</td>
+    <td><%= @item.purchase_price %></td>
+  </tr>
+    
+  <tr>
+    <td>備考</td>
+    <td><%= @item.remarks %></td>
+  </tr>
+    
+</table>
+
+<%= link_to 'アイテム編集', edit_item_path(@item), class: 'btn btn-primary' %>
+<%= link_to 'アイテム削除', @item, method: :delete, data: {confirm: '本当に削除してよろしいですか？'}, class: 'btn btn-danger' %>
+<div class="text-right"><%= link_to 'アイテム一覧に戻る', items_path, class: 'btn btn-secondary btn-sm' %></div>
+

@@ -1,0 +1,52 @@
+<div class="col-sm-9">
+  <ul class="nav nav-tabs nav-justified mb-3">
+    <li class="nav-item"><%= link_to 'items', items_path %></li>
+    <li class="nav-item"><%= link_to 'outfits', outfits_path %></li>
+    <li class="nav-item"><%= link_to 'setting', user_path(@user) %></li>
+  </ul>
+  
+  <h1>コーディネート一覧</h1>
+  
+  <div class="table-responsive-lg">
+  <table id="outfit-table" class="table table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th nowrap>名称</th>
+        <th nowrap>トップス</th>
+        <th nowrap>アウター/ジャケット</th>
+        <th nowrap>パンツ</th>
+        <th nowrap>バッグ</th>
+        <th nowrap>シューズ</th>
+        <th nowrap>登録日</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @outfits.each do |outfit| %>
+      <tr>
+        <th nowrap><%= link_to outfit.title, outfit %></th>
+        <td nowrap>
+          <% if Item.find_by(id: outfit.tops) %>
+            <%= Item.find_by(id: outfit.tops).item_name %><br>
+            <%= Item.find_by(id: outfit.tops).brand %><br>
+            <%= Item.find_by(id: outfit.tops).color %>
+          <% else %>
+            <p>なし</p>
+          <% end %>
+        </td>
+        <td nowrap><%= Item.find_by(id: outfit.outer)?  Item.find_by(id: outfit.outer).item_name : "なし" %></td>
+        <td nowrap><%= Item.find_by(id: outfit.pants)?  Item.find_by(id: outfit.pants).item_name : "なし" %></td>
+        <td nowrap><%= Item.find_by(id: outfit.bag)?  Item.find_by(id: outfit.bag).item_name : "なし" %></td>
+        <td nowrap><%= Item.find_by(id: outfit.shoes)?  Item.find_by(id: outfit.shoes).item_name : "なし" %></td>
+        <td><%= outfit.created_at.strftime('%Y/%m/%d') %></td>
+        
+      </tr>
+    <% end %>
+    </tbody>
+   </table>
+   </div>
+   
+  <div class="text-right">
+    <%= link_to '新規コーディネート登録', new_outfit_path, class: 'btn btn-primary' %>
+  </div>
+  
+</div>

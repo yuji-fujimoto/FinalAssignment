@@ -7,4 +7,15 @@ class User < ApplicationRecord
   has_secure_password
   
   has_many :items
+  has_many :outfits
+  
+  # accepts_nested_attributes_for :items
+  # validate :items_size_vailidate
+  
+  # ITEM_MAX = current_user.max_tops
+  # def item_size_validate
+  #   errors.add(:items, "items over") if self.items.size > ITEM_MAX
+  # end
+
+  
 end
