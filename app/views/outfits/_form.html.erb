@@ -43,7 +43,7 @@
     <%= f.collection_select :shoes, current_user.items.where(category: 5), :id, :item_name, {include_blank: "未選択"}, class: "form-control" %>
   </div>
   
-  <%= f.submit '登録する' %>
+  <%= f.submit '登録する', class: 'btn btn-primary btn-block' %>
   
   </div>
 </div>

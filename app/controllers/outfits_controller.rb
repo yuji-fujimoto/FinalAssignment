@@ -22,6 +22,7 @@ class OutfitsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @outfit = current_user.outfits.build(outfit_params)
     if @outfit.save
       flash[:success] = 'コーディネートを登録しました。'
