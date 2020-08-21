@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only:[:index, :show, :edit]
-  
+  # before_action :correct_user, only: [:show, :edit, :update]
   def index
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def new
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
   
   def update

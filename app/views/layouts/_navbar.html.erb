@@ -1,4 +1,3 @@
-
 <header class="mb-4">
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <a class="navbar-brand" href="/">Smart Closet</a>
@@ -11,9 +10,9 @@
         <% if logged_in? %>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
-            <ul class="dropdown-menu dropdwon-menu-right">
-              <li class="dropdown-item"><%= link_to 'My items', items_url %></li>
-              <li class="dropdown-item"><%= link_to 'My outfits', outfits_url %></li>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li class="dropdown-item"><%= link_to 'My Items', items_url %></li>
+              <li class="dropdown-item"><%= link_to 'My Outfits', outfits_url %></li>
               <li class="dropdown-item"><%= link_to 'My Profile', user_path(@user) %></li>
          
               <li class="dropdown-divider"></li>
