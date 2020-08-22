@@ -39,6 +39,8 @@
     
 </table>
 
-<%= link_to 'コーディネート編集', edit_outfit_path(@outfit), class: 'btn btn-primary' %>
-<%= link_to 'コーディネート削除', @outfit, method: :delete, data: {confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
+<div class="mb-3">
+  <%= link_to 'コーディネート編集', edit_outfit_path(@outfit), class: 'btn btn-primary' %>
+  <%= link_to 'コーディネート削除', @outfit, method: :delete, data: {confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
+</div>
 <div class="text-right"><%= link_to 'コーディネート一覧に戻る', outfits_path, class: 'btn btn-secondary btn-sm' %></div>

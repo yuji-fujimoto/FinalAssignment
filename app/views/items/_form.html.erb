@@ -1,54 +1,55 @@
 <div class="row mb-3">
   <div class="col-sm-6 offset-sm-3">
 
-<%= form_with(model: item, local: true) do |f| %>
-  <% if item.errors.any? %>
-    <div id="error_explanation">
-      <ul>
+  <%= form_with(model: item, local: true) do |f| %>
+    <% if item.errors.any? %>
+      <div id="error_explanation">
+        <ul>
         <% item.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <div class= "form-group">
+    <div class= "form-group">
       <%= f.label :item_name, 'アイテム名' %>
       <%= f.text_field :item_name, class: 'form-control' %>
-      </div>
+    </div>
       
-      <div class= "form-group">  
+    <div class= "form-group">  
       <%= f.label :category, 'カテゴリ' %>
       <%= f.select :category, Item.categories.keys.to_a, {include_blank: "選択してください"}, class: "form-control" %>
-      </div>
+    </div>
       
-      <div class= "form-group">
+    <div class= "form-group">
       <%= f.label :brand, 'ブランド' %>
       <%= f.text_field :brand, class: 'form-control' %>
-      </div>
+    </div>
       
-      <div class= "form-group">
+    <div class= "form-group">
       <%= f.label :color, 'カラー' %>
       <%= f.text_field :color, class: 'form-control' %>
-      </div>
+    </div>
       
-      <div class= "form-group">
+    <div class= "form-group">
       <%= f.label :size, 'サイズ' %>
       <%= f.text_field :size, class: 'form-control' %>
-      </div>
+    </div>
       
-      <div class= "form-group">
+    <div class= "form-group">
       <%= f.label :purchase_price, '購入価格' %>
       <%= f.text_field :purchase_price, class: 'form-control' %>
-      </div>
+    </div>
       
-      <div class= "form-group">
+    <div class= "form-group">
       <%= f.label :remarks, '備考' %>
       <%= f.text_field :remarks, class: 'form-control' %>
-      </div>
+    </div>
       
-      <%= f.submit '登録する', class: 'btn btn-primary btn-block' %>
+    <%= f.submit '登録する', class: 'btn btn-primary btn-block' %>
       
-    <% end %>
+  <% end %>
+  
   </div>
 </div>

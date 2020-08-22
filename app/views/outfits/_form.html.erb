@@ -1,16 +1,16 @@
 <div class="row mb-3">
   <div class="col-sm-6 offset-sm-3">
 
-<%= form_with(model: outfit, local: true) do |f| %>
-  <% if outfit.errors.any? %>
-    <div id="error_explanation">
-      <ul>
+  <%= form_with(model: outfit, local: true) do |f| %>
+    <% if outfit.errors.any? %>
+      <div id="error_explanation">
+        <ul>
         <% outfit.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
+        </ul>
+      </div>
+    <% end %>
   
   <div class="form-group">
     <%= f.label :title, '名前' %>
@@ -26,18 +26,22 @@
     <%= f.label :tops, 'トップス' %>
     <%= f.collection_select :tops, current_user.items.where(category: 1), :id, :item_name, {include_blank: "未選択"}, class: 'form-control' %>
   </div>
+  
   <div class= "form-group">
     <%= f.label :outer, 'ジャケット/アウター' %>
     <%= f.collection_select :outer, current_user.items.where(category: 2), :id, :item_name, {include_blank: "未選択"}, class: 'form-control' %>
   </div>
+  
   <div class= "form-group">
     <%= f.label :pants, 'パンツ' %>
     <%= f.collection_select :pants, current_user.items.where(category: 3), :id, :item_name, {include_blank: "未選択"}, class: "form-control" %>
   </div>
+  
   <div class= "form-group">
     <%= f.label :bag, 'バッグ' %>
     <%= f.collection_select :bag, current_user.items.where(category: 4), :id, :item_name, {include_blank: "未選択"}, class: "form-control" %>
   </div>
+  
   <div class= "form-group">
     <%= f.label :shoes, "シューズ" %>
     <%= f.collection_select :shoes, current_user.items.where(category: 5), :id, :item_name, {include_blank: "未選択"}, class: "form-control" %>
@@ -45,7 +49,7 @@
   
   <%= f.submit '登録する', class: 'btn btn-primary btn-block' %>
   
+  <% end %>
+
   </div>
 </div>
-  
-<% end %>
