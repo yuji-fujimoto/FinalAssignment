@@ -5,7 +5,7 @@ class OutfitsController < ApplicationController
   
   def index
     @user = current_user
-    @outfits = current_user.outfits
+    @outfits = current_user.outfits.page(params[:page]).per(25)
   end
 
   def show

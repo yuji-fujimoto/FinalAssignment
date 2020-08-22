@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
 
   def index
     @user = current_user
-    @items = current_user.items.order(sort_column + ' ' + sort_direction)
+    @items = current_user.items.order(sort_column + ' ' + sort_direction).page(params[:page]).per(25)
   end
 
   def show
