@@ -1,39 +1,36 @@
-<div class="col-sm-9">
-  <ul class="nav nav-tabs nav-justified mb-3">
-    <li class="nav-item"><%= link_to 'Items', items_path %></li>
-    <li class="nav-item"><%= link_to 'Outfits', outfits_path %></li>
-    <li class="nav-item"><%= link_to 'Profile', user_path(@user) %></li>
-  </ul>
-  
-  <h1>アイテム一覧</h1>
+<ul class="nav nav-tabs nav-justified mb-3">
+  <li class="nav-item"><%= link_to 'Items', items_path %></li>
+  <li class="nav-item"><%= link_to 'Outfits', outfits_path %></li>
+  <li class="nav-item"><%= link_to 'Profile', user_path(@user) %></li>
+</ul>
 
-  <table id="item-table" class="table table-bordered">
-    <thead class="thead-light">
-      <tr>
-        <th><%= sortable "item_name", "アイテム名称" %></th>
-        <th><%= sortable "category", "カテゴリ" %></th>
-        <th><%= sortable "brand", "ブランド" %></th>
-        <th>カラー</th>
-        <th>サイズ</th>
-        <th><%= sortable "created_at", "登録日" %></th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= link_to item.item_name, item %></td>
-        <td><%= item.category %></td>
-        <td><%= item.brand %></td>
-        <td><%= item.color %></td>
-        <td><%= item.size %></td>
-        <td><%= item.created_at.strftime('%Y/%m/%d') %></td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
-  
-  <div class="text-right">
-    <%= link_to '新規登録', new_item_path, class: 'btn btn-primary' %>
-  </div>
- 
+<h1>アイテム一覧</h1>
+
+<table id="item-table" class="table table-bordered table-sm">
+  <thead class="thead-light">
+    <tr>
+      <th><%= sortable "item_name", "アイテム名称" %></th>
+      <th><%= sortable "category", "カテゴリ" %></th>
+      <th><%= sortable "brand", "ブランド" %></th>
+      <th>カラー</th>
+      <th>サイズ</th>
+      <th><%= sortable "created_at", "登録日" %></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @items.each do |item| %>
+    <tr>
+      <td ><%= link_to item.item_name, item %></td>
+      <td><%= item.category %></td>
+      <td ><%= item.brand %></td>
+      <td ><%= item.color %></td>
+      <td><%= item.size %></td>
+      <td><%= item.created_at.strftime('%Y/%m/%d') %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div class="text-right">
+  <%= link_to '新規登録', new_item_path, class: 'btn btn-primary' %>
 </div>
