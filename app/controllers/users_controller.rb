@@ -39,6 +39,13 @@ class UsersController < ApplicationController
     end
   end
   
+  def destroy
+    @user = current_user
+    @user.destroy
+    flash[:success] = '退会処理が完了しました'
+    redirect_to("/")
+  end
+  
 end
 
 private

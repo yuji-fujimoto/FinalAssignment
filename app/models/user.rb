@@ -6,8 +6,8 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   
-  has_many :items
-  has_many :outfits
+  has_many :items, :dependent => :destroy
+  has_many :outfits, :dependent => :destroy
   
   # accepts_nested_attributes_for :items
   # validate :items_size_vailidate
