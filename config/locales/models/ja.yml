@@ -1,23 +1,17 @@
 ja:
- activerecord:
-  models:
-    outfit: コーディネート
-  attributes:
-    outfit:
-      title: 名前
-  
-  models:
-    item: アイテム
-  attributes:
-    item:
-      item_name: アイテム名
-      category: カテゴリー
-      
-  models:
-    user: ユーザ
-  attributes:
-    user:
-      name: ユーザ名
-      email: メールアドレス
-      password: パスワード
-      password_confirmation: パスワード(確認用)
+  activerecord:
+    models:
+      user: ユーザ
+      item: アイテム
+      outfit: コーディネート
+    attributes:
+      user:
+        name: ユーザ名
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード(確認用)
+      item:
+        item_name: アイテム名
+        category: カテゴリー
+      outfit:
+        title: 名前
