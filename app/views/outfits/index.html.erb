@@ -22,7 +22,7 @@
   <tbody>
     <% @outfits.each do |outfit| %>
       <tr>
-        <th><%= link_to outfit.title, outfit %></th>
+        <td><%= link_to outfit.title, outfit %></td>
         <td nowrap>
           <% if Item.find_by(id: outfit.tops) %>
             <%= Item.find_by(id: outfit.tops).item_name %><br>
