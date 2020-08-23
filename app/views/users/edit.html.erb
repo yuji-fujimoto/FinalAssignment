@@ -4,50 +4,52 @@
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
 
-<%= form_with(model: @user, local: true) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  
-  <div class="form-group">
-    <%= f.label :name, 'ユーザ名' %>
-    <%= f.text_field :name, class: 'form-control' %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.label :max_tops, 'トップス所持制限数' %>
-    <%= f.number_field :max_tops, class: 'form-control', min: 0 %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.label :max_outer, 'アウター/ジャケット所持制限数' %>
-    <%= f.number_field :max_outer, class: 'form-control', min: 0 %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.label :max_pants, 'パンツ所持制限数' %>
-    <%= f.number_field :max_pants, class: 'form-control', min:0 %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.label :max_bag, 'バッグ所持制限数' %>
-    <%= f.number_field :max_bag, class: 'form-control', min: 0 %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.label :max_shoes, 'シューズ所持制限数' %>
-    <%= f.number_field :max_shoes, class: 'form-control', min: 0 %>
-  </div>
-  
-  <%= f.submit '変更する', class: 'btn btn-primary btn-block' %>
-  
-<% end %>
+    <%= form_with(model: @user, local: true) do |f| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      
+      <div class="form-group">
+        <%= f.label :name, 'ユーザ名' %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :max_tops, 'トップス所持制限数' %>
+        <%= f.number_field :max_tops, class: 'form-control', min: 0 %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :max_outer, 'アウター/ジャケット所持制限数' %>
+        <%= f.number_field :max_outer, class: 'form-control', min: 0 %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :max_pants, 'パンツ所持制限数' %>
+        <%= f.number_field :max_pants, class: 'form-control', min:0 %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :max_bag, 'バッグ所持制限数' %>
+        <%= f.number_field :max_bag, class: 'form-control', min: 0 %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :max_shoes, 'シューズ所持制限数' %>
+        <%= f.number_field :max_shoes, class: 'form-control', min: 0 %>
+      </div>
+      
+      <%= f.submit '変更する', class: 'btn btn-primary btn-block' %>
+      
+    <% end %>
   
   </div>
 </div>
+
+<div class="text-right"><%= link_to 'マイページに戻る', user_path(@user), class: 'btn btn-secondary' %></div>
