@@ -21,28 +21,28 @@
       </div>
       
       <div class="form-group">
-        <%= f.label :max_tops, 'トップス所持制限数' %>
-        <%= f.number_field :max_tops, class: 'form-control', min: 0 %>
+        <%= f.label :max_tops, 'トップス所持制限数 ( 0 ~ 9999 )' %>
+        <%= f.number_field :max_tops, class: 'form-control', min: 0, max: 9999 %>
       </div>
       
       <div class="form-group">
-        <%= f.label :max_outer, 'アウター/ジャケット所持制限数' %>
-        <%= f.number_field :max_outer, class: 'form-control', min: 0 %>
+        <%= f.label :max_outer, 'アウター/ジャケット所持制限数 ( 0 ~ 9999 )' %>
+        <%= f.number_field :max_outer, class: 'form-control', min: 0, max: 9999 %>
       </div>
       
       <div class="form-group">
-        <%= f.label :max_pants, 'パンツ所持制限数' %>
-        <%= f.number_field :max_pants, class: 'form-control', min:0 %>
+        <%= f.label :max_pants, 'パンツ所持制限数 ( 0 ~ 9999 )' %>
+        <%= f.number_field :max_pants, class: 'form-control', min: 0, max: 9999 %>
       </div>
       
       <div class="form-group">
-        <%= f.label :max_bag, 'バッグ所持制限数' %>
-        <%= f.number_field :max_bag, class: 'form-control', min: 0 %>
+        <%= f.label :max_bag, 'バッグ所持制限数 ( 0 ~ 9999 )' %>
+        <%= f.number_field :max_bag, class: 'form-control', min: 0, max: 9999 %>
       </div>
       
       <div class="form-group">
-        <%= f.label :max_shoes, 'シューズ所持制限数' %>
-        <%= f.number_field :max_shoes, class: 'form-control', min: 0 %>
+        <%= f.label :max_shoes, 'シューズ所持制限数 ( 0 ~ 9999 )' %>
+        <%= f.number_field :max_shoes, class: 'form-control', min: 0, max: 9999 %>
       </div>
       
       <%= f.submit '変更する', class: 'btn btn-primary btn-block' %>
